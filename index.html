@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!---sussjdjasb-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Collection</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .box {
+            text-align: center;
+            background: white;
+            border: 2px solid gray;
+            padding: 25px; /* Increased padding */
+            border-radius: 10px;
+            width: 320px; /* Increased width */
+            min-height: 400px; /* Added min-height */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .box img {
+            width: 250px; /* Increased image size */
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .box h2 {
+            font-size: 24px; /* Slightly bigger text */
+            margin: 10px 0;
+            color: darkblue;
+        }
+        .box p {
+            font-size: 16px; /* Bigger description text */
+            color: #555;
+        }
+        .box button {
+            background-color: orange;
+            border: none;
+            padding: 12px; /* Bigger button */
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .box button:hover {
+            background-color: darkorange;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: darkblue;">Anime Collection</h1>
+    <div id="root"></div>
+    <script>
+      let products = [
+        {
+          id: 1,
+          name: "Naruto Uzumaki",
+          desc: "A ninja from the Hidden Leaf Village who dreams of becoming Hokage.",
+          url: "https://th.bing.com/th/id/OIP.TebsFTpqgM_Wm6uOIt9pEwHaFj?w=213&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        },
+        {
+          id: 2,
+          name: "Monkey D. Luffy",
+          desc: "A pirate with a rubber body, aiming to become the Pirate King.",
+          url: "https://tse2.mm.bing.net/th?id=OIP.Ie3snd00jQdDJQegX806YgHaHp&pid=Api&P=0&h=180"
+        },
+        {
+          id: 3,
+          name: "Goku",
+          desc: "A Saiyan warrior with immense power, always looking for a strong fight.",
+          url: "https://tse3.mm.bing.net/th?id=OIP.-1zyzIMDHKcU_-sXth6ZiQHaFP&pid=Api&P=0&h=180"
+        }
+      ];
+
+      let length = products.length;
+      let str = "<div class='container'>";
+      for(let i = 0; i < length; i++) { 
+        str += `<div class='box'>
+            <img src='${products[i].url}' alt='${products[i].name}'>
+            <h2>${products[i].name}</h2>
+            <p>${products[i].desc}</p>
+            <button>Add to cart</button>
+        </div>`;
+      }
+      str += '</div>';
+      document.getElementById("root").innerHTML = str;
+    </script>
+  </body>
+</html>
